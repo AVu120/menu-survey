@@ -1,7 +1,23 @@
 import "./App.css";
+import Menu from "../src/pages/menu/Menu";
+import Survey from "../src/pages/survey/Survey";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  return <div className="App">App Placeholder</div>;
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route exact path="/survey">
+            <Survey />
+          </Route>
+          <Route path="/">
+            <Menu />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
