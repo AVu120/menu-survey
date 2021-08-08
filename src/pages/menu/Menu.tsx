@@ -4,7 +4,8 @@ import { itemNameToDisplayName } from "../../utils/dataMappings";
 const Menu = () => {
   const history = useHistory();
 
-  const selectItem = (e: any) => history.push(`/survey/${e.target.value}`);
+  const selectItem = (e: React.ChangeEvent<HTMLSelectElement>) =>
+    history.push(`/survey/${e.target.value}`);
 
   return (
     <div>
@@ -12,7 +13,9 @@ const Menu = () => {
       <select onChange={selectItem}>
         <option selected disabled style={{ display: "none" }}></option>
         {Object.keys(itemNameToDisplayName).map((key: string) => (
-          <option value={key}>{itemNameToDisplayName[key]}</option>
+          <option key={`menu-item-${key}`} value={key}>
+            {itemNameToDisplayName[key]}
+          </option>
         ))}
       </select>
     </div>
