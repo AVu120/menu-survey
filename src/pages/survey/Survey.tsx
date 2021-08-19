@@ -1,60 +1,47 @@
 import { useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import EmojiRating from "react-emoji-rating";
+import Emoticons from "./Emoticons";
+import StarRating from "./StarRating";
+import { IMap } from "../../types/interfaces";
+import styles from "./Survey.module.css";
+import "./App.css";
 
 const Survey = () => {
-  const [rating, setRating] = useState("");
-  const [isRatingSubmitted, setIsRatingSubmitted] = useState(false);
-  const { item }: { item: string } = useParams();
-  const history = useHistory();
-  const changeRating = (e: any) => setRating(e);
+  const [hoverRating, setHoverRating] = useState(4);
+  const [selectedRating, setSelectedRating] = useState(4);
+
+  const handleOnClick = (rating: number) => {
+    setSelectedRating(rating);
+  };
+
+  const handleOnMouseOver = (rating: number) => {
+    setHoverRating(rating);
+  };
+
+  const handleOnMouseLeave = (rating: number) => {
+    setHoverRating(rating);
+  };
+
+  const ratingToBackgroundMap: IMap = {
+    1: "shock-face",
+    2: "sad-face",
+    3: "flat-face",
+    4: "smile-face",
+    5: "happy-face",
+  };
 
   return (
-    <div>
-      {!isRatingSubmitted ? (
-        <>
-          <h2>How was the {item}?</h2>
-          <EmojiRating variant="funky" onChange={changeRating} />
-          {rating && (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <h2>Would you like to leave a comment?</h2>
-              <textarea rows={4} cols={60} />
-              <button
-                type="button"
-                style={{
-                  marginTop: "20px",
-                  padding: "5px 10px",
-                  width: "fit-content",
-                }}
-                onClick={() => setIsRatingSubmitted(!isRatingSubmitted)}
-              >
-                Submit
-              </button>
-            </div>
-          )}
-        </>
-      ) : (
-        <div>
-          <h2>Thank you for your review! </h2>{" "}
-          <button
-            type="button"
-            style={{
-              marginTop: "20px",
-              padding: "5px 10px",
-              width: "fit-content",
-            }}
-            onClick={() => history.push("/")}
-          >
-            Review something else
-          </button>{" "}
-        </div>
-      )}
+    <div className={styles[ratingToBackgroundMap[selectedRating]]}>
+      <Emoticons selectedRating={selectedRating} />
+
+      <div className="label">Rate your experience</div>
+      <StarRating
+        starCount={5}
+        hoverRating={hoverRating}
+        selectedRating={selectedRating}
+        handleOnClick={handleOnClick}
+        handleOnMouseOver={handleOnMouseOver}
+        handleOnMouseLeave={handleOnMouseLeave}
+      />
     </div>
   );
 };

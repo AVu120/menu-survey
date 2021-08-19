@@ -1,12 +1,10 @@
-interface Map {
-  [key: string]: string;
-}
+import { IMap } from "../types/interfaces";
 
 /**
  * Object mapping s3 object names (keys) to how it's displayed to
  * users in the UI (values).
  */
-export const itemNameToDisplayName: Map = {
+export const itemNameToDisplayName: IMap = {
   "fried-rice": "Fried Rice",
   noodles: "Noodles",
   pancakes: "Pancakes",

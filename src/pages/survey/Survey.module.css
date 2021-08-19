@@ -1,0 +1,19 @@
+.shock-face {
+  background-image: linear-gradient(0deg, #ef6c00, #e65100);
+}
+
+.sad-face {
+  background-image: linear-gradient(0deg, #f57f17, #ef6c00);
+}
+
+.flat-face {
+  background-image: linear-gradient(0deg, #f9a825, #f57f17);
+}
+
+.smile-face {
+  background-image: linear-gradient(0deg, #fbc02d, #f9a825);
+}
+
+.happy-face {
+  background-image: linear-gradient(0deg, #fdd835, #fbc02d);
+}
