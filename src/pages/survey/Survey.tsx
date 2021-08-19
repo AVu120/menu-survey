@@ -1,12 +1,12 @@
 import { useState } from "react";
-import Emoticons from "./Emoticons";
-import StarRating from "./StarRating";
+import Emoticon from "./Emoticon";
+import StarRatingScale from "./StarRatingScale";
 import { IMap } from "../../types/interfaces";
 import styles from "./Survey.module.css";
 
 const Survey = () => {
-  const [hoverRating, setHoverRating] = useState(4);
-  const [selectedRating, setSelectedRating] = useState(4);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [selectedRating, setSelectedRating] = useState(0);
 
   const handleOnClick = (rating: number) => {
     setSelectedRating(rating);
@@ -29,11 +29,15 @@ const Survey = () => {
   };
 
   return (
-    <div className={styles[ratingToBackgroundMap[selectedRating]]}>
-      <Emoticons selectedRating={selectedRating} />
+    <div
+      className={styles[ratingToBackgroundMap[selectedRating] || "smile-face"]}
+    >
+      <Emoticon
+        selectedEmoticon={ratingToBackgroundMap[selectedRating] || "smile-face"}
+      />
 
       <div className="label">Rate your experience</div>
-      <StarRating
+      <StarRatingScale
         starCount={5}
         hoverRating={hoverRating}
         selectedRating={selectedRating}

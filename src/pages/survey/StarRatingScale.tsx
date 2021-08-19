@@ -1,7 +1,7 @@
 import StarIcon from "mdi-react/StarIcon";
 import StarOutlineIcon from "mdi-react/StarOutlineIcon";
 
-interface IStarRatingProps {
+interface IStarRatingScaleProps {
   selectedRating: number;
   starCount: number;
   hoverRating: number;
@@ -9,14 +9,14 @@ interface IStarRatingProps {
   handleOnMouseOver: any;
   handleOnMouseLeave: any;
 }
-const StarRating = ({
+const StarRatingScale = ({
   selectedRating,
   starCount,
   hoverRating,
   handleOnClick,
   handleOnMouseOver,
   handleOnMouseLeave,
-}: IStarRatingProps) => {
+}: IStarRatingScaleProps) => {
   return (
     <div className="rating-holder">
       <div className="rating-bar">
@@ -46,4 +46,4 @@ const StarRating = ({
   );
 };
 
-export default StarRating;
+export default StarRatingScale;
