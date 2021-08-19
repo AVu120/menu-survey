@@ -1,5 +1,5 @@
 import { IMap } from "../../../src/types/interfaces";
-
+import styles from "./Emoticons.module.css";
 interface IEmoticonsProps {
   selectedRating: number;
 }
@@ -14,12 +14,12 @@ const Emoticons = ({ selectedRating }: IEmoticonsProps) => {
   };
 
   return (
-    <div className="face">
-      <div className="eye" />
-      <div className="mouth">
-        <div className={ratingToFace[`${selectedRating}`]} />
+    <div className={styles.face}>
+      <div className={styles.eye} />
+      <div className={styles.mouth}>
+        <div className={styles[ratingToFace[`${selectedRating}`]]} />
       </div>
-      <div className="eye" />
+      <div className={styles.eye} />
     </div>
   );
 };

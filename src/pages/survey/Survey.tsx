@@ -3,7 +3,6 @@ import Emoticons from "./Emoticons";
 import StarRating from "./StarRating";
 import { IMap } from "../../types/interfaces";
 import styles from "./Survey.module.css";
-import "./App.css";
 
 const Survey = () => {
   const [hoverRating, setHoverRating] = useState(4);
