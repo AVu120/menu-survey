@@ -1,19 +1,19 @@
-.shock-face {
-  background-image: linear-gradient(0deg, #ef6c00, #e65100);
+.shock {
+  background-color: #ee4338;
 }
 
-.sad-face {
-  background-image: linear-gradient(0deg, #f57f17, #ef6c00);
+.sad {
+  background-color: #f59624;
 }
 
-.flat-face {
-  background-image: linear-gradient(0deg, #f9a825, #f57f17);
+.flat {
+  background-color: #fcdd3d;
 }
 
-.smile-face {
-  background-image: linear-gradient(0deg, #fbc02d, #f9a825);
+.smile {
+  background-color: #8ec23e;
 }
 
-.happy-face {
-  background-image: linear-gradient(0deg, #fdd835, #fbc02d);
+.happy {
+  background-color: #44af49;
 }

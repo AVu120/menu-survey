@@ -21,23 +21,23 @@ const Survey = () => {
   };
 
   const ratingToBackgroundMap: IMap = {
-    1: "shock-face",
-    2: "sad-face",
-    3: "flat-face",
-    4: "smile-face",
-    5: "happy-face",
+    1: "shock",
+    2: "sad",
+    3: "flat",
+    4: "smile",
+    5: "happy",
   };
 
   return (
     <div
-      className={styles[ratingToBackgroundMap[selectedRating] || "smile-face"]}
+      className={styles[ratingToBackgroundMap[selectedRating] || "smile"]}
       style={{ height: "100%" }}
     >
       <Emoticon
-        selectedEmoticon={ratingToBackgroundMap[selectedRating] || "smile-face"}
+        selectedEmoticon={ratingToBackgroundMap[selectedRating] || "smile"}
       />
 
-      <div className="label">Rate your experience</div>
+      <div className="label">Rate your meal</div>
       <StarRatingScale
         starCount={5}
         hoverRating={hoverRating}
