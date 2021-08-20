@@ -30,8 +30,9 @@ const Survey = () => {
 
   return (
     <div
-      className={styles[ratingToBackgroundMap[selectedRating] || "smile"]}
-      style={{ height: "100%" }}
+      className={`${styles.Survey} ${
+        styles[ratingToBackgroundMap[selectedRating] || "smile"]
+      }`}
     >
       <Emoticon
         selectedEmoticon={ratingToBackgroundMap[selectedRating] || "smile"}

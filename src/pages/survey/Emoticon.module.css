@@ -2,7 +2,7 @@
   display: flex;
   height: 5rem;
   justify-content: center;
-  padding: 20vh 5vw 20vh 5vw;
+  padding: 0 10vw 10vh 10vw;
 }
 
 .eye {
@@ -12,10 +12,22 @@
   width: 1.5rem;
 }
 
+.left_eye {
+  composes: eye;
+  position: relative;
+  left: 30px;
+}
+
+.right_eye {
+  composes: eye;
+  position: relative;
+  right: 30px;
+}
+
 .mouth {
   display: flex;
   justify-content: center;
-  margin: 1rem 1rem 0 1rem;
+  margin: 1.5rem 0 0 0;
   width: 10rem;
 }
 

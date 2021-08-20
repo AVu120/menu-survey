@@ -6,11 +6,11 @@ interface IEmoticonProps {
 const Emoticon = ({ selectedEmoticon }: IEmoticonProps) => {
   return (
     <div className={styles.face}>
-      <div className={styles.eye} />
+      <div className={styles.left_eye} />
       <div className={styles.mouth}>
         <div className={styles[selectedEmoticon]} />
       </div>
-      <div className={styles.eye} />
+      <div className={styles.right_eye} />
     </div>
   );
 };

@@ -1,3 +1,11 @@
+.Survey {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
 .shock {
   background-color: #ee4338;
 }
@@ -21,5 +29,6 @@
 .label {
   font-size: 1.2rem;
   font-weight: 700;
-  margin: 1.5rem 0;
+  background-color: inherit;
+  padding-bottom: 1.5rem;
 }
