@@ -3,7 +3,6 @@ body,
 #root {
   background-color: #f8f8f8 !important;
   color: #333;
-  display: flex;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.3em;
   margin: 0;
@@ -16,42 +15,4 @@ body,
   height: 100vh;
   justify-content: center;
   width: 100vw;
-}
-
-.label {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 1.5rem 0;
-}
-
-.rating-holder {
-  display: flex;
-  justify-content: center;
-}
-
-.rating-bar {
-  align-items: center;
-  background-color: rgba(119, 119, 119, 0.1);
-  border-radius: 5rem;
-  display: flex;
-  justify-content: center;
-  margin: 0 0 2rem 0;
-  width: 17rem;
-}
-
-.rating-icon {
-  align-items: center;
-  display: flex;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1.2rem;
-  justify-content: center;
-  padding: 0;
-  transition: all 0.5s ease-in-out;
-  height: 3rem;
-  width: 3rem;
-}
-
-.rotate {
-  transform: rotate(144deg);
 }

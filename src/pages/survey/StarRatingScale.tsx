@@ -1,6 +1,6 @@
 import StarIcon from "mdi-react/StarIcon";
 import StarOutlineIcon from "mdi-react/StarOutlineIcon";
-
+import styles from "./StarRatingScale.module.css";
 interface IStarRatingScaleProps {
   selectedRating: number;
   starCount: number;
@@ -18,15 +18,15 @@ const StarRatingScale = ({
   handleOnMouseLeave,
 }: IStarRatingScaleProps) => {
   return (
-    <div className="rating-holder">
-      <div className="rating-bar">
+    <div className={styles.rating_holder}>
+      <div className={styles.rating_bar}>
         {Array(starCount)
           .fill(null)
           .map((el, index) => (
             <div
-              className={`rating-icon ${
+              className={`${styles.rating_icon} ${
                 selectedRating >= index + 1 || hoverRating >= index + 1
-                  ? "rotate"
+                  ? `${styles.rotate}`
                   : ""
               }`}
               key={index + 1}

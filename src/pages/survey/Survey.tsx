@@ -37,7 +37,7 @@ const Survey = () => {
         selectedEmoticon={ratingToBackgroundMap[selectedRating] || "smile"}
       />
 
-      <div className="label">Rate your meal</div>
+      <div className={styles.label}>Rate your meal</div>
       <StarRatingScale
         starCount={5}
         hoverRating={hoverRating}
