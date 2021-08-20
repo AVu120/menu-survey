@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Emoticon from "./Emoticon";
-import StarRatingScale from "./StarRatingScale";
+import Emoticon from "../../components/survey/emoticon/Emoticon";
+import StarRatingScale from "../../components/survey/starRatingScale/StarRatingScale";
 import { IMap } from "../../types/interfaces";
 import styles from "./Survey.module.css";
 
