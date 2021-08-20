@@ -8,15 +8,15 @@ const Survey = () => {
   const [hoverRating, setHoverRating] = useState(0);
   const [selectedRating, setSelectedRating] = useState(0);
 
-  const handleOnClick = (rating: number) => {
+  const changeRating = (rating: number) => {
     setSelectedRating(rating);
   };
 
-  const handleOnMouseOver = (rating: number) => {
+  const hoverOverRating = (rating: number) => {
     setHoverRating(rating);
   };
 
-  const handleOnMouseLeave = (rating: number) => {
+  const hoverOffRating = (rating: number) => {
     setHoverRating(rating);
   };
 
@@ -43,9 +43,9 @@ const Survey = () => {
         starCount={5}
         hoverRating={hoverRating}
         selectedRating={selectedRating}
-        handleOnClick={handleOnClick}
-        handleOnMouseOver={handleOnMouseOver}
-        handleOnMouseLeave={handleOnMouseLeave}
+        onClick={changeRating}
+        onMouseOver={hoverOverRating}
+        onMouseLeave={hoverOffRating}
       />
     </div>
   );

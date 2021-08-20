@@ -5,17 +5,17 @@ interface IStarRatingScaleProps {
   selectedRating: number;
   starCount: number;
   hoverRating: number;
-  handleOnClick: any;
-  handleOnMouseOver: any;
-  handleOnMouseLeave: any;
+  onClick: any;
+  onMouseOver: any;
+  onMouseLeave: any;
 }
 const StarRatingScale = ({
   selectedRating,
   starCount,
   hoverRating,
-  handleOnClick,
-  handleOnMouseOver,
-  handleOnMouseLeave,
+  onClick,
+  onMouseOver,
+  onMouseLeave,
 }: IStarRatingScaleProps) => {
   return (
     <div className={styles.rating_holder}>
@@ -30,9 +30,9 @@ const StarRatingScale = ({
                   : ""
               }`}
               key={index + 1}
-              onClick={() => handleOnClick(index + 1)}
-              onMouseOver={() => handleOnMouseOver(index + 1)}
-              onMouseLeave={handleOnMouseLeave}
+              onClick={() => onClick(index + 1)}
+              onMouseOver={() => onMouseOver(index + 1)}
+              onMouseLeave={onMouseLeave}
             >
               {selectedRating >= index + 1 || hoverRating >= index + 1 ? (
                 <StarIcon />
