@@ -58,7 +58,7 @@ const Survey = () => {
             onMouseLeave={hoverOffRating}
           />
           {selectedRating > 0 && (
-            <>
+            <div className={styles.submit_form}>
               <div className={styles.comment_input_label}>
                 Leave a comment (optional)?
               </div>
@@ -70,7 +70,7 @@ const Survey = () => {
               >
                 Submit feedback
               </button>
-            </>
+            </div>
           )}
         </>
       ) : (

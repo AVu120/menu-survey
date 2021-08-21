@@ -51,6 +51,18 @@
   /* font-size: 1.3em; */
 }
 
+.submit_form {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.review_form {
+  background-color: inherit;
+}
+
 .button {
   margin: 1rem;
   border-radius: 0.2rem;
@@ -62,6 +74,7 @@
   border: 3px solid #333333;
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
     0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  width: 150px;
 }
 
 .button:hover {
