@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/AVu120/menu-survey/static/css/main.d3ef7f64.chunk.css",
+    "main.css": "/AVu120/menu-survey/static/css/main.59eafb60.chunk.css",
     "main.js": "/AVu120/menu-survey/static/js/main.2f190fd7.chunk.js",
     "main.js.map": "/AVu120/menu-survey/static/js/main.2f190fd7.chunk.js.map",
     "runtime-main.js": "/AVu120/menu-survey/static/js/runtime-main.272b2e4c.js",
@@ -10,13 +10,13 @@
     "static/js/3.4b67c30a.chunk.js": "/AVu120/menu-survey/static/js/3.4b67c30a.chunk.js",
     "static/js/3.4b67c30a.chunk.js.map": "/AVu120/menu-survey/static/js/3.4b67c30a.chunk.js.map",
     "index.html": "/AVu120/menu-survey/index.html",
-    "static/css/main.d3ef7f64.chunk.css.map": "/AVu120/menu-survey/static/css/main.d3ef7f64.chunk.css.map",
+    "static/css/main.59eafb60.chunk.css.map": "/AVu120/menu-survey/static/css/main.59eafb60.chunk.css.map",
     "static/js/2.42e1f162.chunk.js.LICENSE.txt": "/AVu120/menu-survey/static/js/2.42e1f162.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.272b2e4c.js",
     "static/js/2.42e1f162.chunk.js",
-    "static/css/main.d3ef7f64.chunk.css",
+    "static/css/main.59eafb60.chunk.css",
     "static/js/main.2f190fd7.chunk.js"
   ]
 }
