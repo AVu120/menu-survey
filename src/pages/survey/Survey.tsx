@@ -38,7 +38,7 @@ const Survey = () => {
         selectedEmoticon={ratingToBackgroundMap[selectedRating] || "smile"}
       />
 
-      <div className={styles.label}>Rate your meal</div>
+      <div className={styles.rate_meal_label}>Rate your meal</div>
       <StarRatingScale
         starCount={5}
         hoverRating={hoverRating}
@@ -47,6 +47,17 @@ const Survey = () => {
         onMouseOver={hoverOverRating}
         onMouseLeave={hoverOffRating}
       />
+      {selectedRating > 0 && (
+        <>
+          <div className={styles.comment_input_label}>
+            Leave a comment (optional)?
+          </div>
+          <textarea rows={4} cols={50} className={styles.comment_input} />
+          <button type="button" className={styles.submit_button}>
+            Submit feedback
+          </button>
+        </>
+      )}
     </div>
   );
 };

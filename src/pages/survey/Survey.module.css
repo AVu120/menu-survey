@@ -1,6 +1,7 @@
 .Survey {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   height: 100%;
   width: 100%;
@@ -26,9 +27,32 @@
   background-color: #44af49;
 }
 
-.label {
+.rate_meal_label {
   font-size: 1.2rem;
   font-weight: 700;
   background-color: inherit;
   padding: 1rem 0 1.5rem;
+}
+
+.comment_input_label {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 2rem 0 0.5rem;
+}
+.comment_input {
+  width: 280px;
+}
+
+.submit_button {
+  margin: 1rem;
+  border-radius: 1rem;
+
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #333333;
+  color: white;
+  border: 3px solid #333333;
+}
+
+.submit_button:hover {
 }
