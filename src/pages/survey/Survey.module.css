@@ -38,7 +38,7 @@
 
 .comment_input_label {
   composes: label;
-  padding: 2rem 0 0.5rem;
+  padding: 1rem 0 0.5rem;
 }
 
 .survey_submitted_label {
