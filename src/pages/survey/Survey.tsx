@@ -47,7 +47,7 @@ const Survey = () => {
       />
 
       {!isFeedbackSubmitted ? (
-        <>
+        <form className={styles.review_form}>
           <div className={styles.rate_meal_label}>Rate your meal</div>
           <StarRatingScale
             starCount={5}
@@ -72,7 +72,7 @@ const Survey = () => {
               </button>
             </div>
           )}
-        </>
+        </form>
       ) : (
         <>
           <div className={styles.survey_submitted_label}>
