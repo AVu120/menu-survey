@@ -1,5 +1,6 @@
 {
   "name": "menu-survey",
+  "homepage": "https://github.com/AVu120/menu-survey",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -26,7 +27,9 @@
     "test": "yarn lint && react-scripts test --watchAll=false",
     "test-watch": "react-scripts test",
     "lint": "eslint . --max-warnings 0",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +51,7 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.8",
+    "gh-pages": "^3.2.3",
     "husky": "^7.0.0"
   }
 }
