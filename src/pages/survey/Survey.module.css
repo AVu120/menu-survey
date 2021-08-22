@@ -27,41 +27,41 @@
   background-color: #44af49;
 }
 
-.label {
+/* .label {
   font-size: 1rem;
   font-weight: 700;
-}
-.rate_meal_label {
+} */
+/* .rate_meal_label {
   composes: label;
   padding: 1rem 0 0.5rem;
-}
+} */
 
-.comment_input_label {
+/* .comment_input_label {
   composes: label;
   padding: 1rem 0 0.5rem;
-}
+} */
 
-.survey_submitted_label {
+/* .survey_submitted_label {
   composes: label;
-}
-.comment_input {
-  width: 280px;
-  /* color: #333; */
-  font-family: Arial, Helvetica, sans-serif;
-  /* font-size: 1.3em; */
-}
+} */
+/* .comment_input { */
+/* width: 280px; */
+/* color: #333; */
+/* font-family: Arial, Helvetica, sans-serif; */
+/* font-size: 1.3em; */
+/* } */
 
-.submit_form {
+/* .submit_form {
   background-color: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-}
+} */
 
-.review_form {
+/* .review_form {
   background-color: inherit;
-}
+} */
 
 .button {
   margin: 1rem;

@@ -1,15 +1,22 @@
 import { useState } from "react";
 import Emoticon from "../../components/survey/emoticon/Emoticon";
-import StarRatingScale from "../../components/survey/starRatingScale/StarRatingScale";
 import { IMap } from "../../types/interfaces";
 import styles from "./Survey.module.css";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
+import SurveyForm from "../../components/survey/surveyForm/SurveyForm";
+import SubmitSuccessMessage from "../../components/survey/submitSuccessMessage/SubmitSuccessMessage";
+// import { itemNameToDisplayName } from "../../utils/dataMappings/itemNameToDisplayName";
 
+interface ISurveyParams {
+  restaurant: string;
+  item: string;
+}
 const Survey = () => {
   const [hoverRating, setHoverRating] = useState(0);
   const [selectedRating, setSelectedRating] = useState(0);
   const [isFeedbackSubmitted, setIsFeedbackSubmitted] = useState(false);
   const history = useHistory();
+  const { restaurant, item }: ISurveyParams = useParams();
 
   const changeRating = (rating: number) => {
     setSelectedRating(rating);
@@ -26,7 +33,7 @@ const Survey = () => {
   const changeIsFeedbackSubmitted = (): void =>
     setIsFeedbackSubmitted(!isFeedbackSubmitted);
 
-  const returnToMenu = (): void => history.push("/");
+  const returnToMenu = (): void => history.push(`/${restaurant}`);
 
   const ratingToBackgroundMap: IMap = {
     1: "shock",
@@ -47,48 +54,19 @@ const Survey = () => {
       />
 
       {!isFeedbackSubmitted ? (
-        <form className={styles.review_form}>
-          <div className={styles.rate_meal_label}>Rate your meal</div>
-          <StarRatingScale
-            starCount={5}
-            hoverRating={hoverRating}
-            selectedRating={selectedRating}
-            onClick={changeRating}
-            onMouseOver={hoverOverRating}
-            onMouseLeave={hoverOffRating}
-          />
-          {selectedRating > 0 && (
-            <div className={styles.submit_form}>
-              <div className={styles.comment_input_label}>
-                Leave a comment (optional)?
-              </div>
-              <textarea rows={4} cols={50} className={styles.comment_input} />
-              <button
-                type="button"
-                className={styles.button}
-                onClick={changeIsFeedbackSubmitted}
-              >
-                Submit feedback
-              </button>
-            </div>
-          )}
-        </form>
+        <SurveyForm
+          {...{
+            item,
+            hoverRating,
+            selectedRating,
+            changeRating,
+            hoverOverRating,
+            hoverOffRating,
+            changeIsFeedbackSubmitted,
+          }}
+        />
       ) : (
-        <>
-          <div className={styles.survey_submitted_label}>
-            Thank you!
-            <br />
-            <br />
-            Your feedback has been submitted.
-          </div>
-          <button
-            type="button"
-            className={styles.button}
-            onClick={returnToMenu}
-          >
-            Return to menu
-          </button>
-        </>
+        <SubmitSuccessMessage {...{ restaurant, returnToMenu }} />
       )}
     </div>
   );

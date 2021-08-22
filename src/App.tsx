@@ -8,10 +8,10 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/survey/:item">
+          <Route exact path="/:restaurant/:item">
             <Survey />
           </Route>
-          <Route path="/">
+          <Route path="/:restaurant">
             <Menu />
           </Route>
         </Switch>

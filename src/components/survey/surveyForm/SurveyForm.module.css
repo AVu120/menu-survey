@@ -1,0 +1,52 @@
+.review_form {
+  background-color: inherit;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.rate_meal_label {
+  composes: label;
+  padding: 1rem 0 0.5rem;
+}
+
+.submit_form {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.comment_input_label {
+  composes: label;
+  padding: 1rem 0 0.5rem;
+}
+
+.comment_input {
+  width: 280px;
+  /* color: #333; */
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-size: 1.3em; */
+}
+
+.button {
+  margin: 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #333333;
+  color: white;
+  padding: 5px 10px;
+  border: 3px solid #333333;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+    0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  width: 150px;
+}
+
+.button:hover {
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
