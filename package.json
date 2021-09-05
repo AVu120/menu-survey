@@ -24,9 +24,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "yarn lint && react-scripts test --watchAll=false",
-    "test-watch": "react-scripts test",
+    "testOnly": "react-scripts test --watchAll=false",
+    "test": "react-scripts test",
     "lint": "eslint . --max-warnings 0",
+    "preCommit": "yarn lint && yarn testOnly",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
