@@ -5,7 +5,6 @@ import styles from "./Survey.module.scss";
 import { useHistory, useParams } from "react-router";
 import SurveyForm from "../../components/survey/surveyForm/SurveyForm";
 import SubmitSuccessMessage from "../../components/survey/submitSuccessMessage/SubmitSuccessMessage";
-// import { itemNameToDisplayName } from "../../utils/dataMappings/itemNameToDisplayName";
 
 interface ISurveyParams {
   restaurant: string;
