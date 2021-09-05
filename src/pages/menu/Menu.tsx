@@ -1,7 +1,6 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { itemNameToDisplayName } from "../../utils/dataMappings/itemNameToDisplayName";
 import { restaurantNameToDisplayName } from "../../utils/dataMappings/restaurantNameToDisplayName";
-import { useParams } from "react-router-dom";
 import styles from "./Menu.module.scss";
 interface IMenuParams {
   restaurant: string;
