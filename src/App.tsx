@@ -14,6 +14,9 @@ function App() {
           <Route path="/:restaurant">
             <Menu />
           </Route>
+              <Route path="/">
+            <Menu />
+          </Route>
         </Switch>
       </Router>
     </div>

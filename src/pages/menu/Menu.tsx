@@ -2,22 +2,23 @@ import { useHistory } from "react-router-dom";
 import { itemNameToDisplayName } from "../../utils/dataMappings/itemNameToDisplayName";
 import { restaurantNameToDisplayName } from "../../utils/dataMappings/restaurantNameToDisplayName";
 import { useParams } from "react-router-dom";
-import styles from "./Menu.module.css";
+import styles from "./Menu.module.scss";
 interface IMenuParams {
   restaurant: string;
 }
 const Menu = () => {
   const history = useHistory();
   const { restaurant }: IMenuParams = useParams();
+  const restaurantDisplayName = restaurantNameToDisplayName[restaurant || "restaurant1"]
 
   const selectItem = (e: React.ChangeEvent<HTMLSelectElement>) =>
     history.push(`/${restaurant}/${e.target.value}`);
 
   return (
     <div className={styles.Menu}>
-      {restaurantNameToDisplayName[restaurant] ? (
+      {restaurantDisplayName ? (
         <>
-          <h1>{restaurantNameToDisplayName[restaurant]}</h1>
+          <h1>{restaurantDisplayName}</h1>
           <h2>Select your item:</h2>
           <select onChange={selectItem}>
             <option selected disabled style={{ display: "none" }}></option>

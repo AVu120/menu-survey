@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Emoticon from "../../components/survey/emoticon/Emoticon";
 import { IMap } from "../../types/interfaces";
-import styles from "./Survey.module.css";
+import styles from "./Survey.module.scss";
 import { useHistory, useParams } from "react-router";
 import SurveyForm from "../../components/survey/surveyForm/SurveyForm";
 import SubmitSuccessMessage from "../../components/survey/submitSuccessMessage/SubmitSuccessMessage";
