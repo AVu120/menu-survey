@@ -11,7 +11,7 @@ const Menu = () => {
   const restaurantDisplayName = restaurantNameToDisplayName[restaurant || "restaurant1"]
 
   const selectItem = (e: React.ChangeEvent<HTMLSelectElement>) =>
-    history.push(`/${restaurant}/${e.target.value}`);
+    history.push(`/${restaurant || "restaurant1"}/${e.target.value}`);
 
   return (
     <div className={styles.Menu}>

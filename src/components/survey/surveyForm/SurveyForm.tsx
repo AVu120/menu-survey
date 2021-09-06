@@ -1,4 +1,4 @@
-import styles from "./SurveyForm.module.css";
+import styles from "./SurveyForm.module.scss";
 import StarRatingScale from "../starRatingScale/StarRatingScale";
 
 interface ISurveyFormProps {

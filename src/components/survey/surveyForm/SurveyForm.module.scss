@@ -2,13 +2,13 @@
   background-color: inherit;
 }
 
-.label {
+%label {
   font-size: 1rem;
   font-weight: 700;
 }
 
 .rate_meal_label {
-  composes: label;
+  @extend %label;
   padding: 1rem 0 0.5rem;
 }
 
@@ -21,16 +21,20 @@
 }
 
 .comment_input_label {
-  composes: label;
+  @extend %label;
   padding: 1rem 0 0.5rem;
 }
 
 .comment_input {
   width: 280px;
-  /* color: #333; */
   font-family: Arial, Helvetica, sans-serif;
-  /* font-size: 1.3em; */
 }
+
+.comment_input:focus {
+  border: 2px solid black;
+  outline: none;
+}
+
 
 .button {
   margin: 1rem;
@@ -41,12 +45,12 @@
   color: white;
   padding: 5px 10px;
   border: 3px solid #333333;
-  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
-    0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  box-shadow: 0px 3px 1px -2px rgb(0 , 0,  0.20),
+    0px 2px 2px 0px rgb(0,  0 , 0.14), 0px 1px 5px 0px rgb(0 , 0,  0.12);
   width: 150px;
 }
 
 .button:hover {
-  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
-    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  box-shadow: 0px 2px 4px -1px rgb(0,  0,  0.20),
+    0px 4px 5px 0px rgb(0,  0 , 0.14), 0px 1px 10px 0px rgb(0,  0 , 0.12);
 }
