@@ -10,7 +10,9 @@ const Menu = () => {
   const { restaurant }: { restaurant: string } = useParams();
 
   return (
-    <RestaurantContext.Provider value={restaurant || "restaurant1"}>
+    <RestaurantContext.Provider
+      value={restaurantData[restaurant] ? restaurant : "restaurant1"}
+    >
       <div>
         {(restaurantData[restaurant] || restaurantData["restaurant1"]).map(
           ({ title, items }: IItemGroup) => (

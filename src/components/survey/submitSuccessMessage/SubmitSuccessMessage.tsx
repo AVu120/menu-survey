@@ -1,4 +1,5 @@
 import styles from "./SubmitSuccessMessage.module.css";
+import { restaurantNameToDisplayName } from "../../../utils/dataMappings/restaurantNameToDisplayName";
 
 interface ISubmitSuccessMessageProps {
   restaurant: string;
@@ -14,7 +15,8 @@ const SubmitSuccessMessage = ({
         Thank you!
         <br />
         <br />
-        Your feedback has been submitted to {restaurant}.
+        Your feedback has been submitted to{" "}
+        {restaurantNameToDisplayName[restaurant]}.
       </div>
       <button type="button" className={styles.button} onClick={returnToMenu}>
         Return to menu
