@@ -54,9 +54,14 @@
     0px 1px 10px 0px rgb(0, 0, 0.12);
 }
 
-.button_less_padding {
+.button_after_rating {
   composes: button;
   padding: 5px 5px;
   margin: 20px 10px;
   width: auto;
+}
+
+.button_before_rating {
+  composes: button;
+  margin: 3rem 1rem 0;
 }

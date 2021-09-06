@@ -41,14 +41,14 @@ const SurveyForm = ({
           <div style={{ display: "flex" }}>
             <button
               type="button"
-              className={styles.button_less_padding}
+              className={styles.button_after_rating}
               onClick={returnToMenu}
             >
               Return to menu
             </button>
             <button
               type="button"
-              className={styles.button_less_padding}
+              className={styles.button_after_rating}
               onClick={changeIsFeedbackSubmitted}
             >
               Submit feedback
@@ -57,7 +57,11 @@ const SurveyForm = ({
         </div>
       )}
       {selectedRating === 0 && (
-        <button type="button" className={styles.button} onClick={returnToMenu}>
+        <button
+          type="button"
+          className={styles.button_before_rating}
+          onClick={returnToMenu}
+        >
           Return to menu
         </button>
       )}
