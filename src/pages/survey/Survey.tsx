@@ -61,6 +61,7 @@ const Survey = () => {
             hoverOverRating,
             hoverOffRating,
             changeIsFeedbackSubmitted,
+            returnToMenu,
           }}
           item={item}
         />

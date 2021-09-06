@@ -1,14 +1,15 @@
 import styles from "./SurveyForm.module.scss";
 import StarRatingScale from "../starRatingScale/StarRatingScale";
-
+import { MouseEventHandler } from "react";
 interface ISurveyFormProps {
   item: string;
   hoverRating: number;
   selectedRating: number;
-  changeRating: any;
-  hoverOverRating: any;
-  hoverOffRating: any;
-  changeIsFeedbackSubmitted: any;
+  changeRating: (rating: number) => void;
+  hoverOverRating: (rating: number) => void;
+  hoverOffRating: (rating: number) => void;
+  changeIsFeedbackSubmitted: MouseEventHandler<HTMLButtonElement>;
+  returnToMenu: MouseEventHandler<HTMLButtonElement>;
 }
 const SurveyForm = ({
   item,
@@ -18,6 +19,7 @@ const SurveyForm = ({
   hoverOverRating,
   hoverOffRating,
   changeIsFeedbackSubmitted,
+  returnToMenu,
 }: ISurveyFormProps) => {
   return (
     <form className={styles.review_form}>
@@ -36,14 +38,28 @@ const SurveyForm = ({
             Leave a comment (optional)?
           </div>
           <textarea rows={4} cols={50} className={styles.comment_input} />
-          <button
-            type="button"
-            className={styles.button}
-            onClick={changeIsFeedbackSubmitted}
-          >
-            Submit feedback
-          </button>
+          <div style={{ display: "flex" }}>
+            <button
+              type="button"
+              className={styles.button_less_padding}
+              onClick={returnToMenu}
+            >
+              Return to menu
+            </button>
+            <button
+              type="button"
+              className={styles.button_less_padding}
+              onClick={changeIsFeedbackSubmitted}
+            >
+              Submit feedback
+            </button>
+          </div>
         </div>
+      )}
+      {selectedRating === 0 && (
+        <button type="button" className={styles.button} onClick={returnToMenu}>
+          Return to menu
+        </button>
       )}
     </form>
   );

@@ -1,9 +1,10 @@
 import styles from "./SubmitSuccessMessage.module.css";
 import { restaurantNameToDisplayName } from "../../../utils/dataMappings/restaurantNameToDisplayName";
+import { MouseEventHandler } from "react";
 
 interface ISubmitSuccessMessageProps {
   restaurant: string;
-  returnToMenu: any;
+  returnToMenu: MouseEventHandler<HTMLButtonElement>;
 }
 const SubmitSuccessMessage = ({
   restaurant,
