@@ -3,6 +3,7 @@ import { IItemGroup } from "../../types/restaurant";
 import ItemGroup from "../../components/menu/itemGroup/ItemGroup";
 import { restaurantData } from "../../utils/mockData/restaurants";
 import { createContext } from "react";
+import NavBar from "../../components/menu/navbar/NavBar";
 
 export const RestaurantContext = createContext("restaurant1");
 
@@ -13,6 +14,7 @@ const Menu = () => {
     <RestaurantContext.Provider
       value={restaurantData[restaurant] ? restaurant : "restaurant1"}
     >
+      <NavBar />
       <div>
         {(restaurantData[restaurant] || restaurantData["restaurant1"]).map(
           ({ title, items }: IItemGroup) => (

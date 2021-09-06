@@ -1,0 +1,33 @@
+.NavBar {
+  border-bottom: 2px solid #e3e3e2;
+  text-align: start;
+  padding: 9px 15px 6px 15px;
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.NavBar_when_searching {
+  composes: NavBar;
+  padding: 5px 10px 3px 15px;
+}
+
+.searchIcon {
+  cursor: pointer;
+  position: relative;
+}
+
+.searchInput {
+  border: none;
+  background-color: inherit;
+  padding-left: 10px;
+}
+
+.cancelButton {
+  font-size: 10px;
+  font-weight: bold;
+  border-left: 0.5px solid #cccccc;
+  padding: 10px 5px 10px 10px;
+  text-align: center;
+}
