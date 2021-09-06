@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Emoticon from "../../components/survey/emoticon/Emoticon";
-import { IMap } from "../../types/interfaces";
+import { IMap } from "../../types/common";
 import styles from "./Survey.module.scss";
 import { useHistory, useParams } from "react-router";
 import SurveyForm from "../../components/survey/surveyForm/SurveyForm";
@@ -55,7 +55,6 @@ const Survey = () => {
       {!isFeedbackSubmitted ? (
         <SurveyForm
           {...{
-            item,
             hoverRating,
             selectedRating,
             changeRating,
@@ -63,6 +62,7 @@ const Survey = () => {
             hoverOffRating,
             changeIsFeedbackSubmitted,
           }}
+          item={item}
         />
       ) : (
         <SubmitSuccessMessage {...{ restaurant, returnToMenu }} />

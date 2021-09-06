@@ -1,4 +1,4 @@
-import { IMap } from "../../types/interfaces";
+import { IMap } from "../../types/common";
 
 /**
  * Object mapping s3 object names (keys) to how it's displayed to

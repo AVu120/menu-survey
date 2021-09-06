@@ -1,4 +1,4 @@
-import { IMap } from "../../types/interfaces";
+import { IMap } from "../../types/common";
 
 export const restaurantNameToDisplayName: IMap = {
   restaurant1: "Restaurant 1",
