@@ -10,13 +10,19 @@ const ItemGroup = ({ title, items, searchQuery }: IItemGroupProps) => {
   return (
     <div className={styles.ItemGroup}>
       <h2 className={styles.title}>{title}</h2>
-      {items.map((item) => (
-        <Item
-          title={item.title}
-          description={item.description}
-          image={item.image}
-        />
-      ))}
+      {items.map((item) => {
+        return (
+          (title.toLowerCase().includes(searchQuery) ||
+            item.title.toLowerCase().includes(searchQuery) ||
+            item.description.toLowerCase().includes(searchQuery)) && (
+            <Item
+              title={item.title}
+              description={item.description}
+              image={item.image}
+            />
+          )
+        );
+      })}
     </div>
   );
 };

@@ -30,9 +30,25 @@ const Menu = () => {
       />
       <div style={{ marginTop: "40px" }}>
         {(restaurantData[restaurant] || restaurantData["restaurant1"]).map(
-          ({ title, items }: IItemGroup) => (
-            <ItemGroup {...{ title, items, searchQuery }} />
-          )
+          ({ title, items }: IItemGroup) => {
+            const lowerCaseSearchQuery = searchQuery.toLocaleLowerCase();
+            const shouldDisplayItemGroup =
+              title.toLowerCase().includes(lowerCaseSearchQuery) ||
+              items.some((item) =>
+                item.title.toLowerCase().includes(lowerCaseSearchQuery)
+              ) ||
+              items.some((item) =>
+                item.description.toLowerCase().includes(lowerCaseSearchQuery)
+              );
+            return (
+              shouldDisplayItemGroup && (
+                <ItemGroup
+                  {...{ title, items }}
+                  searchQuery={lowerCaseSearchQuery}
+                />
+              )
+            );
+          }
         )}
       </div>
     </RestaurantContext.Provider>
