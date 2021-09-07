@@ -1,7 +1,7 @@
-import { doesItemGroupContainSearchQuery } from "../../../utils/search/Filter";
 import ItemGroup from "../../../components/menu/itemGroup/ItemGroup";
-import { IItemGroup } from "../../../types/restaurant";
 import { IMap } from "../../../types/common";
+import { IItemGroup } from "../../../types/restaurant";
+import { doesItemGroupContainSearchQuery } from "../../../utils/search/Filter";
 import styles from "./ItemGroupList.module.scss";
 
 interface IItemGroupListProps {

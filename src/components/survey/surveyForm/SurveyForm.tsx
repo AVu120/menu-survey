@@ -1,6 +1,6 @@
-import styles from "./SurveyForm.module.scss";
-import StarRatingScale from "../starRatingScale/StarRatingScale";
 import { MouseEventHandler } from "react";
+import StarRatingScale from "../starRatingScale/StarRatingScale";
+import styles from "./SurveyForm.module.scss";
 interface ISurveyFormProps {
   item: string;
   hoverRating: number;
