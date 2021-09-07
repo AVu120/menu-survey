@@ -1,0 +1,16 @@
+.NoMatchesFound {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  text-align: center;
+}
+
+.emptyResultMsg {
+  font-size: 14px;
+  color: black;
+}
+
+.recommendationMsg {
+  font-size: 12px;
+}
