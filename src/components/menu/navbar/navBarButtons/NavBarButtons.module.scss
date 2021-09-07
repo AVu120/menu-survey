@@ -1,0 +1,19 @@
+.NavBarButtons {
+  display: flex;
+  align-items: center;
+}
+
+.resetButton {
+  color: #9e9e9e;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.cancelButton {
+  font-size: 10px;
+  font-weight: bold;
+  border-left: 0.5px solid #cccccc;
+  padding: 10px 5px 10px 10px;
+  text-align: center;
+  cursor: pointer;
+}

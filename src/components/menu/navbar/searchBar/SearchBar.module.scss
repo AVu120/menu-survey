@@ -1,0 +1,17 @@
+.searchContainer {
+  display: flex;
+}
+
+.searchIcon {
+  cursor: pointer;
+}
+
+.searchInput {
+  border: none;
+  background-color: inherit;
+  padding-left: 7.5px;
+}
+
+.searchInput:focus {
+  outline: none;
+}
