@@ -112,4 +112,63 @@ export const mockThaiRestaurantData: IItemGroup[] = [
       },
     ],
   },
+  {
+    title: "BBQ",
+    items: [
+      {
+        title: "BBQ Chicken (Gai Yang)",
+        description:
+          "Grilled marinated chicken with traditional Thai herbs served with Thai sauce.",
+        image: "",
+      },
+      {
+        title: "BBQ Beef Sunset (Crying Tiger)",
+        description:
+          "Grilled marinated beef served with a mixed salad with Thai herbs sauce on the side.",
+        image:
+          "https://d1ralsognjng37.cloudfront.net/f3237eae-c470-41d1-b7bd-af67c0f30243.jpeg",
+      },
+    ],
+  },
+  {
+    title: "Curry",
+    items: [
+      {
+        title: "Meat Mania Massaman Curry (Chuck Beef Only)",
+        description:
+          "Authentic slow-cooked beef with potato made for people who are meat lovers.",
+        image: "",
+      },
+      {
+        title: "Green Curry",
+        description:
+          "Coconut milk, spicy vegetables cooked with green curry paste.",
+        image: "",
+      },
+      {
+        title: "Red Curry",
+        description:
+          "Coconut milk, medium spicy vegetables cooked with red curry.",
+        image: "",
+      },
+      {
+        title: "Yellow Curry",
+        description:
+          "Coconut milk, mild vegetables with turmeric and curry powder with potatoes.",
+        image: "",
+      },
+      {
+        title: "Real Panang Curry",
+        description:
+          "Thick curry with homemade Panang paste and coconut cream with pea.",
+        image: "",
+      },
+      {
+        title: "Gang Pah (Jungle Curry)",
+        description:
+          "Thai herbs, eggplant, bamboo, dried chili spicy soup without coconut milk.",
+        image: "",
+      },
+    ],
+  },
 ];
