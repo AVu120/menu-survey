@@ -1,7 +1,7 @@
 import { IItemGroupProps } from "../../../types/restaurant";
 import Item from "../item/Item";
 import styles from "./ItemGroup.module.scss";
-import { doesItemContainSearchQuery } from "../../../utils/search/Search";
+import { doesItemContainSearchQuery } from "../../../utils/search/Filter";
 
 const ItemGroup = ({ title, items, searchQuery }: IItemGroupProps) => {
   return (

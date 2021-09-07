@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { restaurantData } from "../../utils/mockData/restaurants";
+import { restaurantData } from "../../data/mockData/restaurants";
 import { ChangeEvent, createContext, useState } from "react";
 import NavBar from "../../components/menu/navbar/NavBar";
 import ItemGroupList from "../../components/menu/itemGroupList/ItemGroupList";

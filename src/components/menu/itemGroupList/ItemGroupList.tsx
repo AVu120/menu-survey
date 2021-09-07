@@ -1,4 +1,4 @@
-import { doesItemGroupContainSearchQuery } from "../../../utils/search/Search";
+import { doesItemGroupContainSearchQuery } from "../../../utils/search/Filter";
 import ItemGroup from "../../../components/menu/itemGroup/ItemGroup";
 import { IItemGroup } from "../../../types/restaurant";
 import { IMap } from "../../../types/common";
