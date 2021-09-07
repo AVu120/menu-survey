@@ -19,6 +19,7 @@ const ItemGroup = ({ title, items, searchQuery }: IItemGroupProps) => {
               title={item.title}
               description={item.description}
               image={item.image}
+              key={`${title}_${item.title}_item`}
             />
           )
         );

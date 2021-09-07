@@ -45,6 +45,7 @@ const Menu = () => {
                 <ItemGroup
                   {...{ title, items }}
                   searchQuery={lowerCaseSearchQuery}
+                  key={`${title}_item_group`}
                 />
               )
             );
