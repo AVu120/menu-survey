@@ -4,7 +4,7 @@ import ItemGroup from "../../components/menu/itemGroup/ItemGroup";
 import { restaurantData } from "../../utils/mockData/restaurants";
 import { ChangeEvent, createContext, useState } from "react";
 import NavBar from "../../components/menu/navbar/NavBar";
-
+import { doesItemGroupContainSearchQuery } from "../../utils/search/Search";
 export const RestaurantContext = createContext("restaurant1");
 
 const Menu = () => {
@@ -31,20 +31,15 @@ const Menu = () => {
       <div style={{ marginTop: "40px" }}>
         {(restaurantData[restaurant] || restaurantData["restaurant1"]).map(
           ({ title, items }: IItemGroup) => {
-            const lowerCaseSearchQuery = searchQuery.toLocaleLowerCase();
-            const shouldDisplayItemGroup =
-              title.toLowerCase().includes(lowerCaseSearchQuery) ||
-              items.some((item) =>
-                item.title.toLowerCase().includes(lowerCaseSearchQuery)
-              ) ||
-              items.some((item) =>
-                item.description.toLowerCase().includes(lowerCaseSearchQuery)
-              );
             return (
-              shouldDisplayItemGroup && (
+              doesItemGroupContainSearchQuery({
+                searchQuery,
+                title,
+                items,
+              }) && (
                 <ItemGroup
                   {...{ title, items }}
-                  searchQuery={lowerCaseSearchQuery}
+                  searchQuery={searchQuery.toLowerCase()}
                   key={`${title}_item_group`}
                 />
               )

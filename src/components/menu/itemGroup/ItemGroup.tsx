@@ -1,10 +1,7 @@
-import { IItemGroup } from "../../../types/restaurant";
+import { IItemGroupProps } from "../../../types/restaurant";
 import Item from "../item/Item";
 import styles from "./ItemGroup.module.scss";
-
-interface IItemGroupProps extends IItemGroup {
-  searchQuery: string;
-}
+import { doesItemContainSearchQuery } from "../../../utils/search/Search";
 
 const ItemGroup = ({ title, items, searchQuery }: IItemGroupProps) => {
   return (
@@ -12,9 +9,12 @@ const ItemGroup = ({ title, items, searchQuery }: IItemGroupProps) => {
       <h2 className={styles.title}>{title}</h2>
       {items.map((item) => {
         return (
-          (title.toLowerCase().includes(searchQuery) ||
-            item.title.toLowerCase().includes(searchQuery) ||
-            item.description.toLowerCase().includes(searchQuery)) && (
+          doesItemContainSearchQuery({
+            searchQuery,
+            groupTitle: title,
+            itemTitle: item.title,
+            description: item.description,
+          }) && (
             <Item
               title={item.title}
               description={item.description}
