@@ -1,4 +1,5 @@
 import SearchIcon from "mdi-react/MagnifyIcon";
+import CloseIcon from "mdi-react/CloseCircleIcon";
 import styles from "./NavBar.module.scss";
 import { ChangeEventHandler } from "react";
 
@@ -33,14 +34,22 @@ const NavBar = ({
         )}
       </div>
       {isSearching && (
-        <div
-          onClick={() => {
-            setIsSearching(false);
-            setSearchQuery("");
-          }}
-          className={styles.cancelButton}
-        >
-          Cancel
+        <div style={{ display: "flex", alignItems: "center" }}>
+          {searchQuery && (
+            <CloseIcon
+              className={styles.resetButton}
+              onClick={() => setSearchQuery("")}
+            />
+          )}
+          <div
+            onClick={() => {
+              setIsSearching(false);
+              setSearchQuery("");
+            }}
+            className={styles.cancelButton}
+          >
+            Cancel
+          </div>
         </div>
       )}
     </div>
