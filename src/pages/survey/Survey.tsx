@@ -34,7 +34,7 @@ const Survey = () => {
 
   const returnToMenu = (): void => history.push(`/${restaurant}`);
 
-  const ratingToBackgroundMap: IMap = {
+  const ratingToBackgroundMap: IMap<string> = {
     1: "shock",
     2: "sad",
     3: "flat",

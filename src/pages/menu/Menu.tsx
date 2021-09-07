@@ -1,10 +1,9 @@
 import { useParams } from "react-router";
-import { IItemGroup } from "../../types/restaurant";
-import ItemGroup from "../../components/menu/itemGroup/ItemGroup";
 import { restaurantData } from "../../utils/mockData/restaurants";
 import { ChangeEvent, createContext, useState } from "react";
 import NavBar from "../../components/menu/navbar/NavBar";
-import { doesItemGroupContainSearchQuery } from "../../utils/search/Search";
+import ItemGroupList from "../../components/menu/itemGroupList/ItemGroupList";
+
 export const RestaurantContext = createContext("restaurant1");
 
 const Menu = () => {
@@ -28,25 +27,7 @@ const Menu = () => {
           setSearchQuery,
         }}
       />
-      <div style={{ marginTop: "40px" }}>
-        {(restaurantData[restaurant] || restaurantData["restaurant1"]).map(
-          ({ title, items }: IItemGroup) => {
-            return (
-              doesItemGroupContainSearchQuery({
-                searchQuery,
-                title,
-                items,
-              }) && (
-                <ItemGroup
-                  {...{ title, items }}
-                  searchQuery={searchQuery.toLowerCase()}
-                  key={`${title}_item_group`}
-                />
-              )
-            );
-          }
-        )}
-      </div>
+      <ItemGroupList {...{ restaurantData, restaurant, searchQuery }} />
     </RestaurantContext.Provider>
   );
 };

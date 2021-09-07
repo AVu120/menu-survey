@@ -1,3 +1,3 @@
-export interface IMap {
-  [key: string]: string;
+export interface IMap<T> {
+  [key: string]: T;
 }
