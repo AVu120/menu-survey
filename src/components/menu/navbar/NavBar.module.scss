@@ -1,27 +1,38 @@
 .NavBar {
   border-bottom: 2px solid #e3e3e2;
   text-align: start;
-  padding: 9px 15px 6px 15px;
+  padding: 8px 15px 6px 15px;
   display: flex;
   font-size: 12px;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  width: calc(100% - 22px);
 }
 
 .NavBar_when_searching {
   composes: NavBar;
-  padding: 5px 10px 3px 15px;
+  padding: 4px 10px 3px 15px;
+}
+
+.searchContainer {
+  display: flex;
 }
 
 .searchIcon {
   cursor: pointer;
-  position: relative;
 }
 
 .searchInput {
   border: none;
   background-color: inherit;
-  padding-left: 10px;
+  padding-left: 7.5px;
+}
+
+.searchInput:focus {
+  outline: none;
 }
 
 .cancelButton {
@@ -30,4 +41,5 @@
   border-left: 0.5px solid #cccccc;
   padding: 10px 5px 10px 10px;
   text-align: center;
+  cursor: pointer;
 }

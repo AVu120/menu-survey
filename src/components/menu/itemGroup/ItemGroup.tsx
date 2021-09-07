@@ -2,7 +2,11 @@ import { IItemGroup } from "../../../types/restaurant";
 import Item from "../item/Item";
 import styles from "./ItemGroup.module.scss";
 
-const ItemGroup = ({ title, items }: IItemGroup) => {
+interface IItemGroupProps extends IItemGroup {
+  searchQuery: string;
+}
+
+const ItemGroup = ({ title, items, searchQuery }: IItemGroupProps) => {
   return (
     <div className={styles.ItemGroup}>
       <h2 className={styles.title}>{title}</h2>
