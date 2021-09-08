@@ -27,7 +27,7 @@ interface ITabsProps {
   restaurantData: IItemGroup[];
 }
 
-export const Tabs = ({
+const Tabs = ({
   activeTabIndex,
   handleTabClick,
   restaurantData,
@@ -65,19 +65,19 @@ export const Tabs = ({
   };
 
   return (
-    <>
-      <animated.div className={styles.Tabs} style={transformStyle}>
-        {restaurantData.map(({ title }: { title: string }, i) => (
-          <MeasuredTab
-            key={title}
-            index={i}
-            onBoundsChange={calculateTabWidths}
-            onClick={handleTabClick}
-          >
-            {title}
-          </MeasuredTab>
-        ))}
-      </animated.div>
-    </>
+    <animated.div className={styles.Tabs} style={transformStyle}>
+      {restaurantData.map(({ title }: { title: string }, i) => (
+        <MeasuredTab
+          key={title}
+          index={i}
+          onBoundsChange={calculateTabWidths}
+          onClick={handleTabClick}
+        >
+          {title}
+        </MeasuredTab>
+      ))}
+    </animated.div>
   );
 };
+
+export default Tabs;

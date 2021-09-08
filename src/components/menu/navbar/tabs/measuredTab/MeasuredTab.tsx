@@ -1,9 +1,8 @@
 import { ReactChild } from "react";
 import { withContentRect } from "react-measure";
-import styles from "./MeasuredTab.module.scss";
 
 const MeasuringTab = ({ measureRef, measure, contentRect, ...props }: any) => (
-  <div className={styles.MeasuringTab} ref={measureRef} {...props} />
+  <div ref={measureRef} {...props} />
 );
 const MeasurableTab = withContentRect("bounds")(MeasuringTab);
 

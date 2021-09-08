@@ -2,7 +2,6 @@ import styles from "./NavBar.module.scss";
 import { ChangeEventHandler } from "react";
 import SearchBar from "./searchBar/SearchBar";
 import NavBarButtons from "./navBarButtons/NavBarButtons";
-import { Tabs } from "./tabs/Tabs";
 import { SpringValue } from "react-spring";
 import { IItemGroup } from "../../../types/restaurant";
 interface INavBarProps {
@@ -28,12 +27,19 @@ const NavBar = ({
   return (
     <div className={isSearching ? styles.NavBar_when_searching : styles.NavBar}>
       <SearchBar
-        {...{ changeSearchQuery, isSearching, setIsSearching, searchQuery }}
+        {...{
+          changeSearchQuery,
+          isSearching,
+          setIsSearching,
+          searchQuery,
+          activeTabIndex,
+          restaurantData,
+          handleTabClick,
+        }}
       />
       {isSearching && (
         <NavBarButtons {...{ searchQuery, setSearchQuery, setIsSearching }} />
       )}
-      <Tabs {...{ activeTabIndex, handleTabClick, restaurantData }} />
     </div>
   );
 };
