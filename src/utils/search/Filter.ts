@@ -1,5 +1,8 @@
-import { IItemGroupProps } from "../../types/restaurant";
+import { IItemGroup } from "../../types/restaurant";
 
+interface IDoesItemGroupContainSearchQueryParams extends IItemGroup {
+  searchQuery: string;
+}
 /**
  * @description Determine whether item group contains search query. Item group contains search query if it's title, or the title or description of one of it's items includes the search query.
  * @param title Title of item group.
@@ -10,7 +13,7 @@ export const doesItemGroupContainSearchQuery = ({
   searchQuery,
   title,
   items,
-}: IItemGroupProps): boolean => {
+}: IDoesItemGroupContainSearchQueryParams): boolean => {
   const lowerCaseSearchQuery = searchQuery.toLocaleLowerCase();
   return (
     title.toLowerCase().includes(lowerCaseSearchQuery) ||

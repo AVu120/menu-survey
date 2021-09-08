@@ -1,38 +1,38 @@
 import ItemGroup from "../../../components/menu/itemGroup/ItemGroup";
 import NoMatchesFound from "../noMatchesFound/NoMatchesFound";
-import { IMap } from "../../../types/common";
 import { IItemGroup } from "../../../types/restaurant";
 import { doesItemGroupContainSearchQuery } from "../../../utils/search/Filter";
 import styles from "./ItemGroupList.module.scss";
 
 interface IItemGroupListProps {
-  restaurantData: IMap<IItemGroup[]>;
-  restaurant: string;
+  restaurantData: IItemGroup[];
   searchQuery: string;
+  handleSectionLayout: Function;
 }
 
 const ItemGroupList = ({
   restaurantData,
-  restaurant,
   searchQuery,
+  handleSectionLayout,
 }: IItemGroupListProps) => {
-  const itemGroupsToDisplay = (
-    restaurantData[restaurant] || restaurantData["restaurant1"]
-  ).map(({ title, items }: IItemGroup) => {
-    return (
-      doesItemGroupContainSearchQuery({
-        searchQuery,
-        title,
-        items,
-      }) && (
-        <ItemGroup
-          {...{ title, items }}
-          searchQuery={searchQuery}
-          key={`${title}_item_group`}
-        />
-      )
-    );
-  });
+  const itemGroupsToDisplay = restaurantData.map(
+    ({ title, items }: IItemGroup, i: number) => {
+      return (
+        doesItemGroupContainSearchQuery({
+          searchQuery,
+          title,
+          items,
+        }) && (
+          <ItemGroup
+            {...{ title, items, handleSectionLayout }}
+            searchQuery={searchQuery}
+            key={`${title}_item_group`}
+            index={i}
+          />
+        )
+      );
+    }
+  );
   return (
     <div className={styles.ItemGroupList}>
       {itemGroupsToDisplay.some((itemGroup) => itemGroup) ? (

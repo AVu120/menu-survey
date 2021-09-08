@@ -1,11 +1,23 @@
-import { IItemGroupProps } from "../../../types/restaurant";
+import { IItemGroup } from "../../../types/restaurant";
 import { doesItemContainSearchQuery } from "../../../utils/search/Filter";
 import Item from "../item/Item";
 import styles from "./ItemGroup.module.scss";
+import MeasuredSection from "./measuredSection/MeasuredSection";
 
-const ItemGroup = ({ title, items, searchQuery }: IItemGroupProps) => {
+interface IItemGroupProps extends IItemGroup {
+  searchQuery: string;
+  handleSectionLayout: Function;
+  index: number;
+}
+const ItemGroup = ({
+  title,
+  items,
+  searchQuery,
+  handleSectionLayout,
+  index,
+}: IItemGroupProps) => {
   return (
-    <div className={styles.ItemGroup}>
+    <MeasuredSection {...{ index, handleSectionLayout }}>
       <h2 className={styles.title}>{title}</h2>
       {items.map((item) => {
         return (
@@ -24,7 +36,7 @@ const ItemGroup = ({ title, items, searchQuery }: IItemGroupProps) => {
           )
         );
       })}
-    </div>
+    </MeasuredSection>
   );
 };
 
