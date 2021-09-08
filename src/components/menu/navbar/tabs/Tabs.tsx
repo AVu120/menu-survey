@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { animated, SpringValue } from "react-spring";
-import MeasuredTab from "./measuredTab/MeasuredTab";
+import MeasuredTab from "./tab/Tab";
 import memoize from "fast-memoize";
 import styles from "./Tabs.module.scss";
 import { IItemGroup } from "../../../../types/restaurant";

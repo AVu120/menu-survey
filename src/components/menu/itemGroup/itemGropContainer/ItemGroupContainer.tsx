@@ -1,13 +1,19 @@
 import { withContentRect } from "react-measure";
-import styles from "./MeasuredSection.module.scss";
+import styles from "./ItemGroupContainer.module.scss";
 
+// MeasurableSection (react-measure) component with onResize attribute which is a
+// on-mount handler that produces the on-mount dimensions aka offset.
 const MeasurableSection = withContentRect("offset")<any>(
   ({ measureRef, ...props }) => (
-    <section className={styles.MeasuredSection} ref={measureRef} {...props} />
+    <section
+      className={styles.ItemGroupContainer}
+      ref={measureRef}
+      {...props}
+    />
   )
 );
 
-interface ISectionProps {
+interface IItemGroupContainerProps {
   handleSectionLayout: Function;
   index: number;
 }
@@ -23,11 +29,15 @@ interface IHandleResizeParams {
   offset: IComponentMeasurements;
 }
 
-const MeasuredSection = ({
+const ItemGroupContainer = ({
   handleSectionLayout,
   index,
   ...props
-}: ISectionProps) => {
+}: IItemGroupContainerProps) => {
+  /**
+   * @description Measures dimensions of component on mount.
+   * @param bounds Dimensions of components on mount.
+   */
   const handleResize = ({ offset }: IHandleResizeParams) => {
     if (offset) {
       handleSectionLayout(index, offset);
@@ -36,4 +46,4 @@ const MeasuredSection = ({
   return <MeasurableSection onResize={handleResize} {...props} />;
 };
 
-export default MeasuredSection;
+export default ItemGroupContainer;
