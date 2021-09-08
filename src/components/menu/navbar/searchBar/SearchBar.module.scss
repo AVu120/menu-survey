@@ -1,10 +1,14 @@
 .searchContainer {
   display: flex;
   width: 100%;
+  position: relative;
 }
 
 .searchIcon {
   cursor: pointer;
+  background-color: white;
+  width: 50px;
+  z-index: 2;
 }
 
 .searchInput {
