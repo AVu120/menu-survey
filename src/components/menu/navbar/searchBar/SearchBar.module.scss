@@ -2,13 +2,15 @@
   display: flex;
   width: 100%;
   position: relative;
+  align-items: center;
 }
 
 .searchIcon {
   cursor: pointer;
   background-color: white;
-  width: 50px;
+  padding: 10px 10px 10px 15px;
   z-index: 2;
+  position: fixed;
 }
 
 .searchInput {

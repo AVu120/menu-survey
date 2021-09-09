@@ -24,7 +24,7 @@ const Menu = () => {
     setActiveTabIndex({
       activeTabIndex: tabScrollAnchors.current.reduce(
         (acc: number, curr: number, i: number): number =>
-          xy[1] + 40 >= curr ? i : acc,
+          xy[1] + 50 >= curr ? i : acc,
         0
       ),
     });

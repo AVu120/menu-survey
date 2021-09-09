@@ -5,8 +5,6 @@ import memoize from "fast-memoize";
 import styles from "./Tabs.module.scss";
 import { IItemGroup } from "../../../../types/restaurant";
 
-const TAB_PADDING = 8;
-
 /**
  * @description Calculate how much to move the tabs to the left for each tab.
  * @param tabWidths tab widths
@@ -15,7 +13,7 @@ const getCumulativeTabWidths = memoize((tabWidths) => {
   return tabWidths.map((_: number, i: number): number =>
     tabWidths.reduce(
       (acc: number, curr: number, j: number): number =>
-        j < i ? acc + curr + 2 * TAB_PADDING : acc,
+        j < i ? acc + curr : acc,
       0
     )
   );

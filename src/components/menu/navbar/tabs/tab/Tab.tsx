@@ -1,9 +1,10 @@
 import { ReactChild } from "react";
 import { withContentRect } from "react-measure";
+import styles from "./Tab.module.scss";
 
 // Component that is single argument to react-measure HOC.
 const MeasuringTab = ({ measureRef, measure, contentRect, ...props }: any) => (
-  <div ref={measureRef} {...props} />
+  <div ref={measureRef} {...props} className={styles.Tab} />
 );
 
 // MeasurableTab (react-measure) component with onResize attribute which is a
