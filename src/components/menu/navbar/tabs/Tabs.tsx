@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { animated, SpringValue } from "react-spring";
-import MeasuredTab from "./tab/Tab";
+import Tab from "./tab/Tab";
 import memoize from "fast-memoize";
 import styles from "./Tabs.module.scss";
 import { IItemGroup } from "../../../../types/restaurant";
@@ -39,11 +39,11 @@ const Tabs = ({
   tab index (which item group title last scrolled out of the view port.) */
   const transformStyle: any = {
     transform: activeTabIndex
-      .interpolate({
+      .to({
         range: indexArray,
         output: getCumulativeTabWidths(tabWidths),
       })
-      .interpolate((translate: any) => `translateX(${-translate}px)`),
+      .to((translate: any) => `translateX(${-translate}px)`),
   };
 
   /**
@@ -65,14 +65,14 @@ const Tabs = ({
   return (
     <animated.div className={styles.Tabs} style={transformStyle}>
       {restaurantData.map(({ title }: { title: string }, i) => (
-        <MeasuredTab
+        <Tab
           key={title}
           index={i}
           onBoundsChange={calculateTabWidths}
           onClick={handleTabClick}
         >
           {title}
-        </MeasuredTab>
+        </Tab>
       ))}
     </animated.div>
   );
