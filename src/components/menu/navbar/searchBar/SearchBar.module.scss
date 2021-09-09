@@ -15,6 +15,7 @@
 .searchIconWhenSearching {
   composes: searchIcon;
   padding-top: 4px;
+  cursor: default;
 }
 
 .searchInput {
