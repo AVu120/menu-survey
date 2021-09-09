@@ -5,6 +5,11 @@
   overflow-x: scroll;
 }
 
+// Hide scrollbar on chromium browsers.
+.Tabs::-webkit-scrollbar {
+  height: 0px;
+}
+
 .Tab {
   padding: 0 12px;
   font-size: 14px;

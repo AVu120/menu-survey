@@ -4,6 +4,7 @@ import ItemGroupList from "../../components/menu/itemGroupList/ItemGroupList";
 import NavBar from "../../components/menu/navbar/NavBar";
 import { restaurantData } from "../../data/mockData/restaurants";
 import { IItemGroup } from "../../types/restaurant";
+import styles from "./Menu.module.scss";
 
 export const RestaurantContext = createContext("restaurant1");
 
@@ -53,7 +54,7 @@ const Menu = () => {
         }}
         restaurantData={menu}
       />
-      <div ref={contentContainer} style={{ height: "100%", overflowY: "auto" }}>
+      <div ref={contentContainer} className={styles.ItemGroupListContainer}>
         <ItemGroupList
           {...{
             restaurant,
