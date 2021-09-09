@@ -5,20 +5,9 @@
   overflow-x: scroll;
   position: relative;
   top: 3.2px;
-  // -ms-overflow-style: none; /* IE 11 */
-  // scrollbar-width: none; /* Firefox 64 */
 }
 
-.Tabs::-webkit-scrollbar {
-  // height: 0px; /* Chromium */
-}
-
-.Tab {
-  padding: 0 12px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  white-space: nowrap;
-  position: relative;
-  bottom: 3.2px;
+.TabsWithoutScrollbar {
+  composes: Tabs;
+  overflow-x: hidden;
 }

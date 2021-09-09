@@ -14,7 +14,7 @@ const MeasurableSection = withContentRect("offset")<any>(
 );
 
 interface IItemGroupContainerProps {
-  handleSectionLayout: Function;
+  handleLayout: Function;
   index: number;
 }
 
@@ -30,7 +30,7 @@ interface IHandleResizeParams {
 }
 
 const ItemGroupContainer = ({
-  handleSectionLayout,
+  handleLayout,
   index,
   ...props
 }: IItemGroupContainerProps) => {
@@ -40,7 +40,7 @@ const ItemGroupContainer = ({
    */
   const handleResize = ({ offset }: IHandleResizeParams) => {
     if (offset) {
-      handleSectionLayout(index, offset);
+      handleLayout(index, offset);
     }
   };
   return <MeasurableSection onResize={handleResize} {...props} />;

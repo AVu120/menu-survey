@@ -59,7 +59,7 @@ const Menu = () => {
           {...{
             restaurant,
             searchQuery,
-            handleSectionLayout: calculateTabScrollAnchors,
+            handleLayout: calculateTabScrollAnchors,
           }}
           restaurantData={menu}
         />

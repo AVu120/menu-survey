@@ -6,18 +6,18 @@ import ItemGroupContainer from "./itemGropContainer/ItemGroupContainer";
 
 interface IItemGroupProps extends IItemGroup {
   searchQuery: string;
-  handleSectionLayout: Function;
+  handleLayout: Function;
   index: number;
 }
 const ItemGroup = ({
   title,
   items,
   searchQuery,
-  handleSectionLayout,
+  handleLayout,
   index,
 }: IItemGroupProps) => {
   return (
-    <ItemGroupContainer {...{ index, handleSectionLayout }}>
+    <ItemGroupContainer {...{ index, handleLayout }}>
       <h2 className={styles.title}>{title}</h2>
       {items.map((item) => {
         return (

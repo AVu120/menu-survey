@@ -7,13 +7,13 @@ import styles from "./ItemGroupList.module.scss";
 interface IItemGroupListProps {
   restaurantData: IItemGroup[];
   searchQuery: string;
-  handleSectionLayout: Function;
+  handleLayout: Function;
 }
 
 const ItemGroupList = ({
   restaurantData,
   searchQuery,
-  handleSectionLayout,
+  handleLayout,
 }: IItemGroupListProps) => {
   const itemGroupsToDisplay = restaurantData.map(
     ({ title, items }: IItemGroup, i: number) => {
@@ -24,7 +24,7 @@ const ItemGroupList = ({
           items,
         }) && (
           <ItemGroup
-            {...{ title, items, handleSectionLayout }}
+            {...{ title, items, handleLayout }}
             searchQuery={searchQuery}
             key={`${title}_item_group`}
             index={i}
