@@ -3,11 +3,14 @@
   align-items: center;
   margin-left: 40px;
   overflow-x: scroll;
+  position: relative;
+  top: 3.2px;
+  // -ms-overflow-style: none; /* IE 11 */
+  // scrollbar-width: none; /* Firefox 64 */
 }
 
-// Hide scrollbar on chromium browsers.
 .Tabs::-webkit-scrollbar {
-  height: 0px;
+  // height: 0px; /* Chromium */
 }
 
 .Tab {
@@ -16,4 +19,6 @@
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
+  bottom: 3.2px;
 }
