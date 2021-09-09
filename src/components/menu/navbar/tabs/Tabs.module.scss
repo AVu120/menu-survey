@@ -1,4 +1,4 @@
-.Tabs {
+.TabsWithScrollbar {
   display: flex;
   align-items: center;
   margin-left: 40px;
@@ -8,6 +8,6 @@
 }
 
 .TabsWithoutScrollbar {
-  composes: Tabs;
+  composes: TabsWithScrollbar;
   overflow-x: hidden;
 }

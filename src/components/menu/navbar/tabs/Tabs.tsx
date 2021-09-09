@@ -10,10 +10,11 @@ interface ITabsProps {
 }
 
 const Tabs = ({ handleTabClick, restaurantData }: ITabsProps) => {
-  const [shouldDisplayScrollbar, setShouldDisplayScrollbar] = useState(false);
   const [tabWidths, setTabWidths] = useState(() =>
     restaurantData.map((_: IItemGroup) => 0)
   );
+  const [totalTabsWidth, setTotalTabsWidth] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(0);
 
   /**
    * @description Calculation initial tab widths on mount.
@@ -32,17 +33,29 @@ const Tabs = ({ handleTabClick, restaurantData }: ITabsProps) => {
   };
 
   useEffect(() => {
-    const totalTabsWidth = tabWidths.reduce(
-      (acc: number, curr: number): number => acc + curr,
-      0
+    setTotalTabsWidth(
+      tabWidths.reduce((acc: number, curr: number): number => acc + curr, 0)
     );
-    setShouldDisplayScrollbar(totalTabsWidth > window.innerWidth);
   }, [tabWidths]);
+
+  // Display scrollbar only when total tabs width > screen width.
+  useEffect(() => {
+    const onResize = () => setScreenWidth(window.innerWidth);
+
+    if (totalTabsWidth) {
+      setScreenWidth(window.innerWidth);
+      window.addEventListener("resize", onResize);
+    }
+
+    return () => window.removeEventListener("resize", onResize);
+  }, [totalTabsWidth]);
 
   return (
     <div
       className={
-        shouldDisplayScrollbar ? styles.Tabs : styles.TabsWithoutScrollbar
+        totalTabsWidth > screenWidth
+          ? styles.TabsWithScrollbar
+          : styles.TabsWithoutScrollbar
       }
     >
       {restaurantData.map(({ title }: { title: string }, i: number) => (
