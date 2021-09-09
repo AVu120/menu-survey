@@ -1,6 +1,14 @@
 .Tabs {
   display: flex;
   align-items: center;
-  z-index: 1;
   margin-left: 40px;
+  overflow-x: scroll;
+}
+
+.Tab {
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
 }

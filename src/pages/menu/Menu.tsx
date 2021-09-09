@@ -1,6 +1,4 @@
-import { ChangeEvent, createContext, useState, useRef } from "react";
-import { useScroll } from "react-use-gesture";
-import { useSpring } from "react-spring";
+import { ChangeEvent, createContext, useRef, useState } from "react";
 import { useParams } from "react-router";
 import ItemGroupList from "../../components/menu/itemGroupList/ItemGroupList";
 import NavBar from "../../components/menu/navbar/NavBar";
@@ -16,25 +14,12 @@ const Menu = () => {
   const menu = restaurantData[restaurant] || restaurantData["restaurant1"];
   const tabScrollAnchors = useRef(menu.map((_: IItemGroup) => 0));
 
-  const [{ activeTabIndex }, setActiveTabIndex] = useSpring(() => ({
-    activeTabIndex: 0,
-  }));
-
-  const bind = useScroll(({ xy }) => {
-    setActiveTabIndex({
-      activeTabIndex: tabScrollAnchors.current.reduce(
-        (acc: number, curr: number, i: number): number =>
-          xy[1] + 50 >= curr ? i : acc,
-        0
-      ),
-    });
-  });
-
   const contentContainer = useRef<any>(null);
   const handleTabClick = (i: number): void => {
     if (contentContainer.current) {
       contentContainer.current.scrollTo({
         top: tabScrollAnchors.current[i] - 40,
+        behavior: "smooth",
       });
     }
   };
@@ -42,7 +27,14 @@ const Menu = () => {
   const changeSearchQuery = (e: ChangeEvent<HTMLInputElement>): void =>
     setSearchQuery(e.target.value);
 
-  const handleSectionLayout = (index: number, offset: any): any => {
+  /**
+   * @description Calculates anchor coordinates/position of each item group on menu mount. These are used
+   * to allow the user to automatically scroll to an item group title when they
+   * click on the corresponding title tab in tabs in the navbar.
+   * @param index index of item group.
+   * @param offset dimension of that item group.
+   */
+  const calculateTabScrollAnchors = (index: number, offset: any): any => {
     tabScrollAnchors.current[index] = offset.top;
   };
 
@@ -57,18 +49,17 @@ const Menu = () => {
           searchQuery,
           changeSearchQuery,
           setSearchQuery,
-          activeTabIndex,
           handleTabClick,
         }}
         restaurantData={menu}
       />
-      <div
-        {...bind()}
-        ref={contentContainer}
-        style={{ height: "100%", overflowY: "auto" }}
-      >
+      <div ref={contentContainer} style={{ height: "100%", overflowY: "auto" }}>
         <ItemGroupList
-          {...{ restaurant, searchQuery, handleSectionLayout }}
+          {...{
+            restaurant,
+            searchQuery,
+            handleSectionLayout: calculateTabScrollAnchors,
+          }}
           restaurantData={menu}
         />
       </div>

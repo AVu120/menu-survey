@@ -1,17 +1,15 @@
-import styles from "./NavBar.module.scss";
 import { ChangeEventHandler } from "react";
-import SearchBar from "./searchBar/SearchBar";
-import NavBarButtons from "./navBarButtons/NavBarButtons";
-import { SpringValue } from "react-spring";
 import { IItemGroup } from "../../../types/restaurant";
+import styles from "./NavBar.module.scss";
+import NavBarButtons from "./navBarButtons/NavBarButtons";
+import SearchBar from "./searchBar/SearchBar";
 interface INavBarProps {
   isSearching: boolean;
   setIsSearching: Function;
   searchQuery: string;
   changeSearchQuery: ChangeEventHandler<HTMLInputElement>;
   setSearchQuery: Function;
-  activeTabIndex: SpringValue<number>;
-  handleTabClick: Function;
+  handleTabClick: (index: number) => void;
   restaurantData: IItemGroup[];
 }
 const NavBar = ({
@@ -20,7 +18,6 @@ const NavBar = ({
   searchQuery,
   changeSearchQuery,
   setSearchQuery,
-  activeTabIndex,
   restaurantData,
   handleTabClick,
 }: INavBarProps) => {
@@ -32,7 +29,6 @@ const NavBar = ({
           isSearching,
           setIsSearching,
           searchQuery,
-          activeTabIndex,
           restaurantData,
           handleTabClick,
         }}

@@ -1,24 +1,21 @@
 import SearchIcon from "mdi-react/MagnifyIcon";
-import styles from "./SearchBar.module.scss";
 import { ChangeEventHandler } from "react";
-import Tabs from "../tabs/Tabs";
-import { SpringValue } from "react-spring";
 import { IItemGroup } from "../../../../types/restaurant";
+import Tabs from "../tabs/Tabs";
+import styles from "./SearchBar.module.scss";
 interface ISearchBarProps {
   isSearching: boolean;
   setIsSearching: Function;
   changeSearchQuery: ChangeEventHandler<HTMLInputElement>;
   searchQuery: string;
-  activeTabIndex: SpringValue<number>;
   restaurantData: IItemGroup[];
-  handleTabClick: Function;
+  handleTabClick: (index: number) => void;
 }
 const SearchBar = ({
   isSearching,
   setIsSearching,
   changeSearchQuery,
   searchQuery,
-  activeTabIndex,
   handleTabClick,
   restaurantData,
 }: ISearchBarProps) => {
@@ -36,7 +33,7 @@ const SearchBar = ({
           className={styles.searchInput}
         />
       ) : (
-        <Tabs {...{ activeTabIndex, handleTabClick, restaurantData }} />
+        <Tabs {...{ handleTabClick, restaurantData }} />
       )}
     </div>
   );
