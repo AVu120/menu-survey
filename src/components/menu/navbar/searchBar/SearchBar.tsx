@@ -22,7 +22,9 @@ const SearchBar = ({
   return (
     <div className={styles.searchContainer}>
       <SearchIcon
-        className={styles.searchIcon}
+        className={
+          isSearching ? styles.searchIconWhenSearching : styles.searchIcon
+        }
         onClick={() => !isSearching && setIsSearching(true)}
       />
       {isSearching ? (
