@@ -1,5 +1,7 @@
 # Menu Survey
 
+![demo-gif](./public/demo.gif)
+
 ## About
 
 After a restaurant customer finishes their meal, they can use this app to send a meal/restaurant review to restaurant management/staff. This app is intended to be used primarily on mobile devices. However the app also works/displays well on tablets and laptops/monitors.
