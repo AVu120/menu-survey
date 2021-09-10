@@ -4,7 +4,7 @@
 
 ## About
 
-After a restaurant customer finishes their meal, they can use this app to send a meal/restaurant review to restaurant management/staff. This app is intended to be used primarily on mobile devices. However the app also works/displays well on tablets and laptops/monitors.
+After a restaurant customer finishes their meal, they can use this app to send a meal/restaurant review to restaurant management/staff. This app is intended to be used primarily on mobile devices. However, this app also works/displays well on tablets and laptops/monitors.
 
 ## Play with App
 
@@ -16,11 +16,11 @@ You can play with a demo at https://avu120.github.io/menu-survey/.
 
 - Node.js
 
-### Installing
+### Installation
 
 - `npm i` or `yarn`
 
-### Executing program
+### Running the app
 
 - `npm start` or `yarn start`
 - Access on any web browser at http://localhost:3000/.
