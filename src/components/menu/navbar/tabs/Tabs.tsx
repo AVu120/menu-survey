@@ -64,6 +64,7 @@ const Tabs = ({ handleTabClick, restaurantData }: ITabsProps) => {
           onClick={handleTabClick}
           index={i}
           handleLayout={calculateTabWidths}
+          isShowingScrollbar={totalTabsWidth > screenWidth}
         >
           {title}
         </Tab>

@@ -171,48 +171,4 @@ export const mockThaiRestaurantData: IItemGroup[] = [
       },
     ],
   },
-  {
-    title: "Curry2",
-    items: [
-      {
-        title: "Meat Mania Massaman Curry (Chuck Beef Only)",
-        description:
-          "Authentic slow-cooked beef with potato made for people who are meat lovers.",
-        image: "",
-      },
-    ],
-  },
-  {
-    title: "Curry3",
-    items: [
-      {
-        title: "Meat Mania Massaman Curry (Chuck Beef Only)",
-        description:
-          "Authentic slow-cooked beef with potato made for people who are meat lovers.",
-        image: "",
-      },
-    ],
-  },
-  {
-    title: "Curry4",
-    items: [
-      {
-        title: "Meat Mania Massaman Curry (Chuck Beef Only)",
-        description:
-          "Authentic slow-cooked beef with potato made for people who are meat lovers.",
-        image: "",
-      },
-    ],
-  },
-  {
-    title: "Curry5",
-    items: [
-      {
-        title: "Meat Mania Massaman Curry (Chuck Beef Only)",
-        description:
-          "Authentic slow-cooked beef with potato made for people who are meat lovers.",
-        image: "",
-      },
-    ],
-  },
 ];

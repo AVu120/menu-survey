@@ -3,9 +3,7 @@ import { withContentRect } from "react-measure";
 import styles from "./Tab.module.scss";
 
 const MeasurableTab = withContentRect("offset")<any>(
-  ({ measureRef, ...props }) => (
-    <div className={styles.Tab} ref={measureRef} {...props}></div>
-  )
+  ({ measureRef, ...props }) => <div ref={measureRef} {...props}></div>
 );
 
 interface ITabProps {
@@ -13,13 +11,20 @@ interface ITabProps {
   onClick: (index: number) => void;
   index: number;
   children?: any;
+  isShowingScrollbar: boolean;
 }
 
 interface IHandleResizeParams {
   offset: IComponentMeasurements;
 }
 
-const Tab = ({ handleLayout, index, onClick, ...props }: ITabProps) => {
+const Tab = ({
+  handleLayout,
+  index,
+  onClick,
+  isShowingScrollbar,
+  ...props
+}: ITabProps) => {
   /**
    * @description Measures dimensions of component on mount.
    * @param bounds Dimensions of components on mount.
@@ -37,7 +42,12 @@ const Tab = ({ handleLayout, index, onClick, ...props }: ITabProps) => {
   };
 
   return (
-    <MeasurableTab onResize={handleResize} onClick={handleClick} {...props} />
+    <MeasurableTab
+      onResize={handleResize}
+      onClick={handleClick}
+      className={isShowingScrollbar ? styles.TabWithScrollBar : styles.Tab}
+      {...props}
+    />
   );
 };
 
