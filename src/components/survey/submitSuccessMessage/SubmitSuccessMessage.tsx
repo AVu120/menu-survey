@@ -16,8 +16,7 @@ const SubmitSuccessMessage = ({
         Thank you!
         <br />
         <br />
-        Your feedback has been submitted to{" "}
-        {restaurantNameToDisplayName[restaurant]}.
+        Your review has been sent to {restaurantNameToDisplayName[restaurant]}.
       </div>
       <button type="button" className={styles.button} onClick={returnToMenu}>
         Return to menu
