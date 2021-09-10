@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# Menu Survey
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
 
-## Available Scripts
+After a restaurant customer finishes their meal, they can use this app to send a meal/restaurant review to restaurant management/staff. This app is intended to be used primarily on mobile devices. However the app also works/displays well on tablets and laptops/monitors.
 
-In the project directory, you can run:
+## Play with App
 
-### `npm start`
+You can play with a demo at https://avu120.github.io/menu-survey/.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Dependencies
 
-### `npm test`
+- Node.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installing
 
-### `npm run build`
+- `npm i` or `yarn`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Executing program
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `npm start` or `yarn start`
+- Access on any web browser at http://localhost:3000/.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Help/Contact
 
-### `npm run eject`
+If you find any bugs, have any issues, want to ask me a question, or provide some advice/feedback to me, please submit an issue to this repo or email me at avu120@gmail.com.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Author
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Name: Anthony Hien Vu
+- Portfolio: https://avu120.github.io/portfolio/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Currently unlicensed.
