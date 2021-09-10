@@ -19,23 +19,25 @@ const ItemGroup = ({
   return (
     <ItemGroupContainer {...{ index, handleLayout }}>
       <h2 className={styles.title}>{title}</h2>
-      {items.map((item) => {
-        return (
-          doesItemContainSearchQuery({
-            searchQuery,
-            groupTitle: title,
-            itemTitle: item.title,
-            description: item.description,
-          }) && (
-            <Item
-              title={item.title}
-              description={item.description}
-              image={item.image}
-              key={`${title}_${item.title}_item`}
-            />
-          )
-        );
-      })}
+      <div className={styles.grid}>
+        {items.map((item) => {
+          return (
+            doesItemContainSearchQuery({
+              searchQuery,
+              groupTitle: title,
+              itemTitle: item.title,
+              description: item.description,
+            }) && (
+              <Item
+                title={item.title}
+                description={item.description}
+                image={item.image}
+                key={`${title}_${item.title}_item`}
+              />
+            )
+          );
+        })}
+      </div>
     </ItemGroupContainer>
   );
 };

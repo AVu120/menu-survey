@@ -1,14 +1,20 @@
-.ItemGroup {
-  padding: 15px 15px 0;
-}
-
-.ItemGroup:last-of-type {
-  padding: 15px;
-}
-
 .title {
   font-size: 20px;
   text-align: start;
   margin-top: 0px;
   margin-bottom: 30px;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px 15px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

@@ -1,3 +1,11 @@
+.ItemGroupContainer:first-of-type {
+  padding: 45px 15px 0;
+}
+
 .ItemGroupContainer {
-  padding: 15px 15px 0;
+  padding: 45px 15px 0;
+}
+
+.ItemGroupContainer:last-of-type {
+  padding: 45px 15px 30px;
 }

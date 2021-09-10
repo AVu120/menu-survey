@@ -16,7 +16,7 @@ const Item = ({ title, description, image }: IItem) => {
       className={image ? styles.Item_with_image : styles.Item}
       onClick={reviewItem}
     >
-      <div>
+      <div className={styles.textContainer}>
         <div className={styles.title}>{title}</div>
         <div className={styles.description}>{description}</div>
       </div>
