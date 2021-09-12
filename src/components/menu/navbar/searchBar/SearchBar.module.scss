@@ -8,13 +8,13 @@
   cursor: pointer;
   background-color: white;
   padding-left: 15px;
-  padding-top: 14px;
+  padding-top: 5px;
   position: fixed;
 }
 
 .searchIconWhenSearching {
   composes: searchIcon;
-  padding-top: 4px;
+  padding-top: 6px;
   cursor: default;
 }
 

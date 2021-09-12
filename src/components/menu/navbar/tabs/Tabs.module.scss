@@ -4,13 +4,7 @@
   margin-left: 40px;
   overflow-x: scroll;
   position: relative;
-  top: 16px;
-}
-
-@media (max-width: 499px) {
-  .TabsWithScrollbar {
-    top: 18px;
-  }
+  top: 5px;
 }
 
 .TabsWithoutScrollbar {
