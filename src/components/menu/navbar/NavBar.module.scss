@@ -17,11 +17,10 @@
 }
 
 @media (min-width: 500px) {
-  .NavBar_when_searching {
-    padding: 5px 0 7px;
-  }
-
   .NavBarWithScrollBar {
     padding-bottom: 3px;
+  }
+  .NavBar {
+    border-bottom: 3px solid #e3e3e2;
   }
 }
