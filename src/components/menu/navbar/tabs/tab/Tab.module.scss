@@ -6,6 +6,8 @@
   white-space: nowrap;
   overflow-y: none;
   height: 100%;
+  position: relative;
+  bottom: 1px;
 }
 
 @media (min-width: 500px) {

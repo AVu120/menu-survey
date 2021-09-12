@@ -36,6 +36,7 @@ const Tabs = ({ handleTabClick, restaurantData }: ITabsProps) => {
     setTotalTabsWidth(
       tabWidths.reduce((acc: number, curr: number): number => acc + curr, 0)
     );
+    // eslint-disable-next-line
   }, [tabWidths]);
 
   return (
