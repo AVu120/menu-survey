@@ -21,7 +21,7 @@ const Menu = () => {
   const handleTabClick = (i: number): void => {
     if (contentContainer.current) {
       contentContainer.current.scrollTo({
-        top: tabScrollAnchors.current[i] - 40,
+        top: tabScrollAnchors.current[i] - 30,
         behavior: "smooth",
       });
     }
