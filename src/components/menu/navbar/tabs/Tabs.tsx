@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { IItemGroup } from "../../../../types/restaurant";
 import { IComponentMeasurements } from "../../../../types/common";
 import Tab from "./tab/Tab";
 import styles from "./Tabs.module.scss";
-
+import { MenuContext } from "../../../../pages/menu/Menu";
 interface ITabsProps {
   handleTabClick: (index: number) => void;
   restaurantData: IItemGroup[];
 }
 
 const Tabs = ({ handleTabClick, restaurantData }: ITabsProps) => {
+  const { setTotalTabsWidth, totalTabsWidth, screenWidth } =
+    useContext(MenuContext);
   const [tabWidths, setTabWidths] = useState(() =>
     restaurantData.map((_: IItemGroup) => 0)
   );
-  const [totalTabsWidth, setTotalTabsWidth] = useState(0);
-  const [screenWidth, setScreenWidth] = useState(0);
 
   /**
    * @description Calculation initial tab widths on mount.
@@ -37,18 +37,6 @@ const Tabs = ({ handleTabClick, restaurantData }: ITabsProps) => {
       tabWidths.reduce((acc: number, curr: number): number => acc + curr, 0)
     );
   }, [tabWidths]);
-
-  // Display scrollbar only when total tabs width > screen width.
-  useEffect(() => {
-    const onResize = () => setScreenWidth(window.innerWidth);
-
-    if (totalTabsWidth) {
-      setScreenWidth(window.innerWidth);
-      window.addEventListener("resize", onResize);
-    }
-
-    return () => window.removeEventListener("resize", onResize);
-  }, [totalTabsWidth]);
 
   return (
     <div

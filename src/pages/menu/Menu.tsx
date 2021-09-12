@@ -1,4 +1,4 @@
-import { ChangeEvent, createContext, useRef, useState } from "react";
+import { ChangeEvent, createContext, useRef, useState, useEffect } from "react";
 import { useParams } from "react-router";
 import ItemGroupList from "../../components/menu/itemGroupList/ItemGroupList";
 import NavBar from "../../components/menu/navbar/NavBar";
@@ -6,11 +6,13 @@ import { restaurantData } from "../../data/mockData/restaurants";
 import { IItemGroup } from "../../types/restaurant";
 import styles from "./Menu.module.scss";
 
-export const RestaurantContext = createContext("restaurant1");
+export const MenuContext = createContext<any>(null);
 
 const Menu = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [totalTabsWidth, setTotalTabsWidth] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(0);
   const { restaurant }: { restaurant: string } = useParams();
   const menu = restaurantData[restaurant] || restaurantData["restaurant1"];
   const tabScrollAnchors = useRef(menu.map((_: IItemGroup) => 0));
@@ -39,9 +41,26 @@ const Menu = () => {
     tabScrollAnchors.current[index] = offset.top;
   };
 
+  // Display tabs scrollbar only when total tabs width > screen width.
+  useEffect(() => {
+    const onResize = () => setScreenWidth(window.innerWidth);
+
+    if (totalTabsWidth) {
+      setScreenWidth(window.innerWidth);
+      window.addEventListener("resize", onResize);
+    }
+
+    return () => window.removeEventListener("resize", onResize);
+  }, [totalTabsWidth]);
+
   return (
-    <RestaurantContext.Provider
-      value={restaurantData[restaurant] ? restaurant : "restaurant1"}
+    <MenuContext.Provider
+      value={{
+        restaurant: restaurantData[restaurant] ? restaurant : "restaurant1",
+        setTotalTabsWidth,
+        totalTabsWidth,
+        screenWidth,
+      }}
     >
       <NavBar
         {...{
@@ -51,6 +70,8 @@ const Menu = () => {
           changeSearchQuery,
           setSearchQuery,
           handleTabClick,
+          totalTabsWidth,
+          screenWidth,
         }}
         restaurantData={menu}
       />
@@ -64,7 +85,7 @@ const Menu = () => {
           restaurantData={menu}
         />
       </div>
-    </RestaurantContext.Provider>
+    </MenuContext.Provider>
   );
 };
 

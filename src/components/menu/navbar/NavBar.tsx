@@ -11,6 +11,8 @@ interface INavBarProps {
   setSearchQuery: Function;
   handleTabClick: (index: number) => void;
   restaurantData: IItemGroup[];
+  totalTabsWidth: number;
+  screenWidth: number;
 }
 const NavBar = ({
   isSearching,
@@ -20,9 +22,17 @@ const NavBar = ({
   setSearchQuery,
   restaurantData,
   handleTabClick,
+  totalTabsWidth,
+  screenWidth,
 }: INavBarProps) => {
   return (
-    <div className={isSearching ? styles.NavBar_when_searching : styles.NavBar}>
+    <nav
+      className={`${isSearching ? styles.NavBarWhenSearching : styles.NavBar} ${
+        totalTabsWidth > screenWidth &&
+        !isSearching &&
+        styles.NavBarWithScrollBar
+      }`}
+    >
       <SearchBar
         {...{
           changeSearchQuery,
@@ -31,12 +41,14 @@ const NavBar = ({
           searchQuery,
           restaurantData,
           handleTabClick,
+          totalTabsWidth,
+          screenWidth,
         }}
       />
       {isSearching && (
         <NavBarButtons {...{ searchQuery, setSearchQuery, setIsSearching }} />
       )}
-    </div>
+    </nav>
   );
 };
 

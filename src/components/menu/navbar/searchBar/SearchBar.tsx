@@ -10,7 +10,10 @@ interface ISearchBarProps {
   searchQuery: string;
   restaurantData: IItemGroup[];
   handleTabClick: (index: number) => void;
+  totalTabsWidth: number;
+  screenWidth: number;
 }
+
 const SearchBar = ({
   isSearching,
   setIsSearching,
@@ -18,13 +21,21 @@ const SearchBar = ({
   searchQuery,
   handleTabClick,
   restaurantData,
+  totalTabsWidth,
+  screenWidth,
 }: ISearchBarProps) => {
   return (
     <div className={styles.searchContainer}>
       <SearchIcon
-        className={
-          isSearching ? styles.searchIconWhenSearching : styles.searchIcon
-        }
+        className={`${
+          isSearching
+            ? styles.searchIconWhenSearching
+            : styles.searchIconWhenNotSearching
+        } ${
+          totalTabsWidth > screenWidth &&
+          !isSearching &&
+          styles.searchIconWithScrollbar
+        }`}
         onClick={() => !isSearching && setIsSearching(true)}
       />
       {isSearching ? (

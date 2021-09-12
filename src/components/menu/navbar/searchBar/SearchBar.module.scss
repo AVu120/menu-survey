@@ -14,8 +14,20 @@
 
 .searchIconWhenSearching {
   composes: searchIcon;
-  padding-top: 6px;
+  padding-top: 7px;
   cursor: default;
+}
+
+.searchIconWhenNotSearching {
+  composes: searchIcon;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+@media (min-width: 500px) {
+  .searchIconWithScrollbar {
+    padding-bottom: 17px;
+  }
 }
 
 .searchInput {

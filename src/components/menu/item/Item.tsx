@@ -2,11 +2,11 @@ import { useHistory } from "react-router-dom";
 import styles from "./Item.module.scss";
 import { IItem } from "../../../types/restaurant";
 import { useContext } from "react";
-import { RestaurantContext } from "../../../pages/menu/Menu";
+import { MenuContext } from "../../../pages/menu/Menu";
 
 const Item = ({ title, description, image }: IItem) => {
   const history = useHistory();
-  const restaurant: string = useContext(RestaurantContext);
+  const { restaurant }: { restaurant: string } = useContext(MenuContext);
 
   const reviewItem = () => {
     history.push(`/${restaurant}/${title}`);

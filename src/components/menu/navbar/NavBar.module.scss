@@ -1,7 +1,6 @@
 .NavBar {
   border-bottom: 2.5px solid #e3e3e2;
   text-align: start;
-  // padding: 0px 0 12px 0;
   display: flex;
   font-size: 12px;
   justify-content: space-between;
@@ -12,13 +11,17 @@
   width: 100%;
 }
 
-.NavBar_when_searching {
+.NavBarWhenSearching {
   composes: NavBar;
   padding: 5px 0 7px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   .NavBar_when_searching {
     padding: 5px 0 7px;
+  }
+
+  .NavBarWithScrollBar {
+    padding-bottom: 3px;
   }
 }
