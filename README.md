@@ -36,4 +36,4 @@ If you find any bugs, have any issues, want to ask me a question, or provide som
 
 ## License
 
-Currently unlicensed.
+This project has a MIT licence (refer to LICENSE file).
