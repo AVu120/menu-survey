@@ -36,4 +36,4 @@ If you find any bugs, have any issues, want to ask me a question, or provide som
 
 ## License
 
-This project has a MIT licence (refer to LICENSE file).
+This project has a MIT license (refer to LICENSE file).
